@@ -2596,8 +2596,9 @@ async def auto_filter(client, name, msg, reply_msg, ai_search, spoll=False):
     temp.GETALL[key] = files
     temp.SHORT[message.from_user.id] = message.chat.id
     print("Current settings:", settings)  # Debugging
- if "button" not in settings:
-    print("Error: 'button' key is missing in settings!")
+     if "button" not in settings:
+        print("Error: 'button' key is missing in settings!")  # Correct indentation
+
  if settings.get("button", False):  # Defaults to False if 'button' is missing
 
         btn = [
