@@ -2595,7 +2595,10 @@ async def auto_filter(client, name, msg, reply_msg, ai_search, spoll=False):
     FRESH[key] = search
     temp.GETALL[key] = files
     temp.SHORT[message.from_user.id] = message.chat.id
-    if settings["button"]:
+    print("Current settings:", settings)  # Debugging
+ if "button" not in settings:
+    print("Error: 'button' key is missing in settings!")
+ if settings["button"]:
         btn = [
             [
                 InlineKeyboardButton(
